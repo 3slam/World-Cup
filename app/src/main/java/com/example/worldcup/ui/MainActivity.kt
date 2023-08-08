@@ -7,6 +7,7 @@ import com.example.worldcup.data.domain.Match
 import com.example.worldcup.data.domain.MusicItem
 import com.example.worldcup.databinding.ActivityMainBinding
 import com.example.worldcup.utils.CsvParser
+import com.example.worldcup.ui.MusicAdapter
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import java.io.BufferedReader
@@ -24,6 +25,11 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
         musicAdapter = MusicAdapter()
         musicRecyclerView.adapter = musicAdapter
         fetchMusicData()
+    }
+    
+    private fun fetchMusicData() {
+        // Implement the method to fetch music data from a data source
+    }
 
         /*
 
