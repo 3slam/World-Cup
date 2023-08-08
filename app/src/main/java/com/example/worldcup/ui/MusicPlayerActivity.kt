@@ -20,12 +20,14 @@ class MusicPlayerActivity : BaseActivity<ActivityMusicPlayerBinding>() {
 
     binding.nextButton.setOnClickListener {
         // Implement next functionality
-        player.next()
+        // player.next() // This method does not exist in SimpleExoPlayer
+        // Replace with the correct method or implement it if necessary
     }
 
     binding.previousButton.setOnClickListener {
         // Implement previous functionality
-        player.previous()
+        // player.previous() // This method does not exist in SimpleExoPlayer
+        // Replace with the correct method or implement it if necessary
     }
     }
 }
