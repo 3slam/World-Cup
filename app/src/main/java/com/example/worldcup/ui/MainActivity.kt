@@ -9,6 +9,9 @@ import java.io.BufferedReader
 import java.io.InputStreamReader
 
 class MainActivity : BaseActivity<ActivityMainBinding>() {
+    companion object {
+        const val WORLD_CUP_MATCHES_CSV = "WorldCupMatches.csv"
+    }
 
     override fun getViewBinding() = ActivityMainBinding.inflate(layoutInflater)
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,7 +35,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
     }
 
     private fun parseWorldCupMatches(){
-        val matchesAsInputStream =  assets.open( "WorldCupMatches.csv")
+        val matchesAsInputStream =  assets.open(WORLD_CUP_MATCHES_CSV)
         val buffer = BufferedReader(InputStreamReader(matchesAsInputStream))
         buffer.forEachLine {
             DataManger.addMatch(CsvParser.parserLine(it))
