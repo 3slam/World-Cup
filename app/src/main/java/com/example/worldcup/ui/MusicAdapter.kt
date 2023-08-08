@@ -8,6 +8,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.worldcup.data.domain.MusicItem
 import com.example.worldcup.R
+import com.bumptech.glide.Glide
 
 class MusicAdapter(private val musicList: List<MusicItem>) : RecyclerView.Adapter<MusicAdapter.MusicViewHolder>() {
 
