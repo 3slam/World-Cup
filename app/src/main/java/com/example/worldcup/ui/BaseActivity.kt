@@ -18,6 +18,7 @@ abstract class BaseActivity< VB: ViewBinding> : AppCompatActivity() {
     protected val binding get() = _binding!!
 
     abstract fun getViewBinding(): VB
+    abstract fun getMediaUri(): String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,7 +29,7 @@ abstract class BaseActivity< VB: ViewBinding> : AppCompatActivity() {
         playerView = findViewById(R.id.player_view)
         playerView.player = player
         
-        val mediaItem = MediaItem.fromUri("https://storage.googleapis.com/exoplayer-test-media-0/play.mp3")
+        val mediaItem = MediaItem.fromUri(getMediaUri())
         player.setMediaItem(mediaItem)
         player.prepare()
     }
