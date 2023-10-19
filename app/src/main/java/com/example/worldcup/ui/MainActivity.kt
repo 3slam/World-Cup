@@ -1,18 +1,35 @@
 package com.example.worldcup.ui
 
 import android.os.Bundle
+import androidx.recyclerview.widget.RecyclerView
 import com.example.worldcup.data.DataManger
 import com.example.worldcup.data.domain.Match
+import com.example.worldcup.data.domain.MusicItem
 import com.example.worldcup.databinding.ActivityMainBinding
 import com.example.worldcup.utils.CsvParser
+import com.example.worldcup.ui.MusicAdapter
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
 import java.io.BufferedReader
 import java.io.InputStreamReader
+import java.net.URL
 
 class MainActivity : BaseActivity<ActivityMainBinding>() {
+    private lateinit var musicRecyclerView: RecyclerView
+    private lateinit var musicAdapter: MusicAdapter
 
     override fun getViewBinding() = ActivityMainBinding.inflate(layoutInflater)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        musicRecyclerView = findViewById(R.id.music_recycler_view)
+        musicAdapter = MusicAdapter()
+        musicRecyclerView.adapter = musicAdapter
+        fetchMusicData()
+    }
+    
+    private fun fetchMusicData() {
+        // Implement the method to fetch music data from a data source
+    }
 
         /*
 
